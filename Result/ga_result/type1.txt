@@ -1,0 +1,5 @@
+Type: 10x10 Time: 87 Cost: 841.0
+Type: 15x10 Time: 138 Cost: 1616.0
+Type: 20x10 Time: 43 Cost: 2065.0
+Type: 30x10 Time: 267 Cost: 3228.0
+Type: 30x30 Time: 440 Cost: 2988.0

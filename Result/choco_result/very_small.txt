@@ -1,0 +1,5 @@
+Type: 10x4 Time: 19 Cost: 915
+Type: 4x4 Time: 2 Cost: 0
+Type: 5x6 Time: 3 Cost: 0
+Type: 6x3 Time: 3 Cost: 428
+Type: 8x3 Time: 3 Cost: 659

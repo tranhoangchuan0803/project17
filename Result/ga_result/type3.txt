@@ -1,0 +1,4 @@
+Type: 200x15 Time: 13170 Cost: 11591.0
+Type: 300x15 Time: 15601 Cost: 11023.0
+Type: 500x15 Time: 20049 Cost: 10858.0
+Type: 500x30 Time: 22032 Cost: 20579.0
