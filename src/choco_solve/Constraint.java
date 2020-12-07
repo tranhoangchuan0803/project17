@@ -64,6 +64,8 @@ public class Constraint {
 					model.arithm(Sum[i][j+1], "-", Sum[i][j], "=", d[j]),
 					model.arithm(Sum[i][j], "=", Sum[i][j+1]));			
 			}
+			model.arithm(Sum[i][N], ">=", c1[i]).post();
+			model.arithm(Sum[i][N], "<=", c2[i]).post();
 		}
 		IntVar[] object = model.intVarArray("object", N+1, 0, sup);
 		model.arithm(object[0], "=", 0).post();
@@ -77,20 +79,21 @@ public class Constraint {
 		Solver solver = model.getSolver();
 		int[] res = new int[N];
 		int iter = 0;
-		int maxx = 0;
+		int min = sup;
 		long start = System.currentTimeMillis();
 		while(solver.solve()) {
 			System.out.println(object[N].getValue());
 				
 			for (int i=0; i<N; ++i) System.out.print(X[i].getValue() + " ");
 			System.out.println();
+			min = Math.min(min, object[N].getValue());
 			if (System.currentTimeMillis()>start + runtime*1000) break;
 		}
-		return maxx;
+		return sup - min;
 	}
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		Solverr s = new Solverr();
+		Constraint s = new Constraint();
 			s.getInput("test_data\\Sample\\test_data.txt");
 //		s.getInput("test_data\\type1\\10x10.txt");
 		System.err.println(s.run());
